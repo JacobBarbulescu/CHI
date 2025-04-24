@@ -8,7 +8,7 @@ var longWait = [30, 60];
 var shortWait = [3, 6];
 
 //The potential amount of time (in seconds) between instructions
-const WAIT = shortWait;
+const WAIT = longWait;
 
 //Sets the number of clicks the trial will last
 const NUMCLICKS = 10;
@@ -21,6 +21,8 @@ class Result {
         this.clickSuccess = clickSuccess;
     }
 }
+
+var justClicked = false;
 
 //An array that holds the results of each click
 var results = [];
@@ -215,4 +217,6 @@ var clickStartTime = Date.now();
 
 generateTiles();
 
-chooseNewTarget();
+setTimeout(() => {
+    chooseNewTarget();
+}, (Math.random() * (WAIT[1] - WAIT[0]) + WAIT[0]) * 1000);
