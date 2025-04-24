@@ -75,6 +75,12 @@ function swapColor () {
             tile.style.backgroundColor = currentColors[y][x];
         }
     }
+
+    //This is to fix IOS speech synth issue
+    var speechSynth = window.speechSynthesis;
+    var newUtter = new SpeechSynthesisUtterance("Swapped color");
+
+    speechSynth.speak(newUtter);
 }
 
 //Takes a csv string, makes a file out of it, then downloads it
