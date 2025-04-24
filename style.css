@@ -1,0 +1,90 @@
+:root {
+    --back: #000000;
+    --menu-back: #1B293C;
+
+    --accent: #b0b0b0;
+
+    --border-radius: 15px;
+}
+
+body {
+    background-color: var(--back);
+}
+
+#swapButton {
+    position: absolute;
+}
+
+#menu {
+    align-self: center;
+    align-content: center;
+
+    width: 98vw;
+    height: 98vh;
+
+    margin: auto;
+
+    background-color: var(--menu-back);
+
+    border-radius: var(--border-radius);
+}
+
+#task {
+    display: block;
+
+    align-self: center;
+    align-content: center;
+    text-align: center;
+
+    background-color: rgba(50, 50, 50, .3);
+
+    height: 10vh;
+
+    font-size: 10vh;
+
+    margin: auto;
+}
+
+.menuRow {
+    align-self: center;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    margin: auto;
+
+    width: 95%;
+}
+
+.icon {
+    display: flex;
+
+    width: 40%;
+    height: auto;
+
+
+    user-select: none;
+    -webkit-user-select: none;  /* Chrome, Opera */
+    -webkit-touch-callout: none;   /* Safari */
+    -moz-user-select: none;   /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */ 
+}
+
+.menuTile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--border-radius);
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--accent);
+    height: 90%;
+
+    margin: auto;
+}
+
+.menuTile:active {
+    scale: .95;
+}
