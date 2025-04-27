@@ -85,6 +85,6 @@ body {
     margin: auto;
 }
 
-.menuTile:active {
+.menuTile:active, .menuTile:focus {
     scale: .95;
 }
