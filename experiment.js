@@ -153,8 +153,6 @@ function chooseNewTarget () {
     //taskText.innerHTML = "Click " + currentColors[y][x];
     //taskText.style.color = currentColors[y][x];
 
-    clickStartTime = clickTime;
-
     instruct(icons[y][x]);
 }
 
@@ -190,6 +188,7 @@ function tileClick (tile) {
     //After a tile is clicked, wait a random amount of time before moving on to the next instruction
     setTimeout(() => {
         chooseNewTarget();
+        clickStartTime = clickTime;
     }, (Math.random() * (WAIT[1] - WAIT[0]) + WAIT[0]) * 1000);
 }
 
