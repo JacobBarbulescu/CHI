@@ -232,4 +232,5 @@ generateTiles();
 
 setTimeout(() => {
     chooseNewTarget();
+    clickStartTime = clickTime;
 }, (Math.random() * (WAIT[1] - WAIT[0]) + WAIT[0]) * 1000);
