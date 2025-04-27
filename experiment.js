@@ -11,7 +11,7 @@ var shortWait = [3, 6];
 const WAIT = longWait;
 
 //Sets the number of clicks the trial will last
-const NUMCLICKS = 9;
+const NUMCLICKS = 5;
 var clicksLeft = NUMCLICKS;
 
 //The result of each click
