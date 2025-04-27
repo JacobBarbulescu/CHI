@@ -4,7 +4,7 @@ const ROWS = 2;
 const HEIGHT = 90/ROWS;
 const WIDTH = 90/COLS;
 
-var longWait = [30, 60];
+var longWait = [20, 30];
 var shortWait = [3, 6];
 
 //The potential amount of time (in seconds) between instructions
