@@ -11,7 +11,7 @@ var shortWait = [3, 6];
 const WAIT = longWait;
 
 //Sets the number of clicks the trial will last
-const NUMCLICKS = 10;
+const NUMCLICKS = 9;
 var clicksLeft = NUMCLICKS;
 
 //The result of each click
@@ -142,10 +142,6 @@ function chooseNewTarget () {
         //taskText.innerHTML = "Trial finished!";
         //taskText.style.color = "black";
 
-        instruct("Trial over");
-
-        processResults();
-
         return;
     }
     //Otherwise, choose a new target
@@ -157,17 +153,29 @@ function chooseNewTarget () {
     //taskText.innerHTML = "Click " + currentColors[y][x];
     //taskText.style.color = currentColors[y][x];
 
+    clickStartTime = clickTime;
+
     instruct(icons[y][x]);
 }
 
 //When a tile is clicked, record information such as time passed, accuracy, etc
 function tileClick (tile) {
     //If all clicks performed, stop registering new clicks
-    if (clicksLeft <= 0) return;
+    if (clicksLeft == 0) {
+        instruct("Trial over");
+
+        processResults();
+
+        clicksLeft--;
+
+        return;
+    }
+    else if (clicksLeft < 0) {
+        return;
+    }
 
     var clickTime = Date.now();
     var timeElapsed = clickTime - clickStartTime;
-    clickStartTime = clickTime;
 
     var clickSuccess = false;
     if (tile.id == targetID) {
