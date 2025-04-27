@@ -159,7 +159,7 @@ function chooseNewTarget () {
 //When a tile is clicked, record information such as time passed, accuracy, etc
 function tileClick (tile) {
     //If all clicks performed, stop registering new clicks
-    if (clicksLeft == 0) {
+    if (clicksLeft == 1) {
         instruct("Trial over");
 
         processResults();
@@ -168,7 +168,7 @@ function tileClick (tile) {
 
         return;
     }
-    else if (clicksLeft < 0) {
+    else if (clicksLeft <= 0) {
         return;
     }
 
